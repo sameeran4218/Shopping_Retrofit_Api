@@ -121,9 +121,9 @@ fun ProductItem(product: Product)
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
         }
-        if(imageState is AsyncImagePainter.State.Error)
+        if(imageState is AsyncImagePainter.State.Success)
         {
-            Image(painter = imageState.painter!!, contentDescription = product.title,
+            Image(painter = imageState.painter, contentDescription = product.title,
               modifier = Modifier
                   .height(200.dp)
                   .fillMaxWidth(), contentScale = ContentScale.Crop )
